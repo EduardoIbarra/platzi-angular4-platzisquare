@@ -5,20 +5,30 @@ import { AppComponent } from './app.component';
 import {AgmCoreModule} from "@agm/core";
 import {ResaltarDirective} from "./directives/resaltar.directive";
 import {DetalleComponent} from "./detalle/detalle.component";
+import {Routes, RouterModule} from "@angular/router";
+import {HomeComponent} from "./home/home.component";
+
+const appRoutes: Routes = [
+    {path:'', component: HomeComponent},
+    {path:'home', component: HomeComponent},
+    {path:'detalle', component: DetalleComponent}
+];
 
 @NgModule({
     declarations: [
         AppComponent,
         ResaltarDirective,
+        HomeComponent,
         DetalleComponent
     ],
     imports: [
         BrowserModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyAEu3rZEeKPx_EKHOVPSP-oarnzMxQwMSo'
-        })
+        }),
+        RouterModule.forRoot(appRoutes)
     ],
     providers: [],
-    bootstrap: [DetalleComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
