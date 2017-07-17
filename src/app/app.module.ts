@@ -3,18 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {AgmCoreModule} from "@agm/core";
+import {ResaltarDirective} from "./directives/resaltar.directive";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAEu3rZEeKPx_EKHOVPSP-oarnzMxQwMSo'
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ResaltarDirective
+    ],
+    imports: [
+        BrowserModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyAEu3rZEeKPx_EKHOVPSP-oarnzMxQwMSo'
+        })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
