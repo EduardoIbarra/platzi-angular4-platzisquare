@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  lugares = [
+    {nombre: 'Cafetería la Esperanza', descripcion: 'El mejor pan y café de Platzi York!'},
+    {nombre: 'Restaurant el Rincón', descripcion: 'Ven a probar nuestras tortas!'},
+    {nombre: 'Zapatería el Dorado', descripcion: 'Lo mejor en calzado para dama'}
+  ];
 }
