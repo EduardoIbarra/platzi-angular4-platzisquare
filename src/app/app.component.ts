@@ -11,4 +11,6 @@ export class AppComponent {
     {nombre: 'Restaurant el Rincón', descripcion: 'Ven a probar nuestras tortas!'},
     {nombre: 'Zapatería el Dorado', descripcion: 'Lo mejor en calzado para dama'}
   ];
+    lat: number = 51.678418;
+    lng: number = 7.809007;
 }
