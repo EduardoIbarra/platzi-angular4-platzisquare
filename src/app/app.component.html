@@ -1,4 +1,4 @@
 <ul>
   <li *ngFor="let lugar of lugares"><strong>{{lugar.nombre}}</strong> {{lugar.descripcion}}</li>
 </ul>
-<agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+<agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng"></agm-map>
