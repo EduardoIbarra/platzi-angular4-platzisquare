@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {AgmCoreModule} from "@agm/core";
 import {ResaltarDirective} from "./directives/resaltar.directive";
+import {DetalleComponent} from "./detalle/detalle.component";
 
 @NgModule({
     declarations: [
         AppComponent,
-        ResaltarDirective
+        ResaltarDirective,
+        DetalleComponent
     ],
     imports: [
         BrowserModule,
@@ -17,6 +19,6 @@ import {ResaltarDirective} from "./directives/resaltar.directive";
         })
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [DetalleComponent]
 })
 export class AppModule { }
