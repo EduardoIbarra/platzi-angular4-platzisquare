@@ -12,7 +12,7 @@ import {LugaresService} from "./services/lugares.service";
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
     {path:'home', component: HomeComponent},
-    {path:'detalle', component: DetalleComponent}
+    {path:'detalle/:id', component: DetalleComponent}
 ];
 
 @NgModule({

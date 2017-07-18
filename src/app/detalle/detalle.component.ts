@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {LugaresService} from "../services/lugares.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'app-detalle',
@@ -8,8 +9,10 @@ import {LugaresService} from "../services/lugares.service";
 export class DetalleComponent {
     lat: number = 51.678418;
     lng: number = 7.809007;
-    lugares = [];
-    constructor(private lugaresService: LugaresService){
-        this.lugares = this.lugaresService.get();
+    lugar = null;
+    id = null;
+    constructor(private lugaresService: LugaresService, private route:ActivatedRoute){
+        this.id = this.route.snapshot.params['id'];
+        this.lugar = this.lugaresService.find(this.id);
     }
 }
