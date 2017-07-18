@@ -7,6 +7,7 @@ import {ResaltarDirective} from "./directives/resaltar.directive";
 import {DetalleComponent} from "./detalle/detalle.component";
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
+import {LugaresService} from "./services/lugares.service";
 
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
@@ -28,7 +29,7 @@ const appRoutes: Routes = [
         }),
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [],
+    providers: [LugaresService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
