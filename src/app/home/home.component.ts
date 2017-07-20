@@ -10,6 +10,13 @@ export class HomeComponent {
     lng: number = 7.809007;
     lugares = [];
     constructor(private lugaresService: LugaresService){
-        this.lugares = this.lugaresService.get();
+        this.lugaresService.get()
+            .subscribe((result) => {
+                    this.lugares = result.json();
+                    var me = this;
+                    me.lugares = Object.keys(this.lugares).map(function (key) { return me.lugares[key]; });
+                    debugger;
+                },
+            (error) => console.log(error));
     }
 }
