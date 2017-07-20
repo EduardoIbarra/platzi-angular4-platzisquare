@@ -1,0 +1,20 @@
+<label>Nombre</label>:
+<input [(ngModel)]="lugar.nombre" />
+<br />
+<label>Latitud</label>:
+<input  type="number" [(ngModel)]="lugar.lat" />
+<br />
+<label>Longitud</label>:
+<input  type="number" [(ngModel)]="lugar.lon" />
+<br />
+<label>Teléfono</label>:
+<input [(ngModel)]="lugar.telefono" />
+<br />
+<label>Website</label>:
+<input [(ngModel)]="lugar.website" />
+<br />
+<label>Descripción</label>:
+<textarea [(ngModel)]="lugar.descripcion" ></textarea>
+<hr />
+<a (click)="onSave()">Guardar</a><br />
+<a routerLink="/home">Cancelar</a><br />
