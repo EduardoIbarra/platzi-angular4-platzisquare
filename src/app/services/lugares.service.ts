@@ -18,7 +18,7 @@ export class LugaresService {
         return this.http.post(this.API_ENDPOINT+'/lugares.json',
             lugar,
             {headers:headers});
-    }
+    };
     public find(id) {
         return this.lugares.filter((l) => {
             return l.id == id;
