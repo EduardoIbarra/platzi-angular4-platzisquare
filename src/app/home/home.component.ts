@@ -15,7 +15,6 @@ export class HomeComponent {
                     this.lugares = result.json();
                     var me = this;
                     me.lugares = Object.keys(this.lugares).map(function (key) { return me.lugares[key]; });
-                    debugger;
                 },
             (error) => console.log(error));
     }
