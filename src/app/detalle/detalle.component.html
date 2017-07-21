@@ -1,5 +1,7 @@
 <a routerLink="/home">Regresar</a><br />
-<agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng"></agm-map>
+<agm-map *ngIf="lugar.lat && lugar.lon" [latitude]="lugar.lat" [longitude]="lugar.lon"></agm-map>
 <h1>{{lugar.nombre}}</h1>
 <hr />
 <p>{{lugar.descripcion}}</p>
+<p>{{lugar.telefono}}</p>
+<p><a href="{{lugar.website}}" target="_blank">{{lugar.website}}</a></p>
