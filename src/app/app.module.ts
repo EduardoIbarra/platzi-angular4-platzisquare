@@ -11,6 +11,9 @@ import {LugaresService} from "./services/lugares.service";
 import {CrearComponent} from "./crear/crear.component";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
+import {AngularFireAuthModule} from "angularfire2/auth/auth.module";
+import {AngularFireDatabaseModule} from "angularfire2/database/database.module";
+import {AngularFireModule} from "angularfire2";
 
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
@@ -18,6 +21,14 @@ const appRoutes: Routes = [
     {path:'detalle/:id', component: DetalleComponent},
     {path:'crear', component: CrearComponent}
 ];
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyC6MbR328WjlqH3fLQAQobLnjMbu9qcPvs",
+    authDomain: "platzi-square-pre.firebaseapp.com",
+    databaseURL: "https://platzi-square-pre.firebaseio.com",
+    storageBucket: "platzi-square-pre.appspot.com",
+    messagingSenderId: "674455763272"
+};
 
 @NgModule({
     declarations: [
@@ -34,7 +45,10 @@ const appRoutes: Routes = [
         }),
         RouterModule.forRoot(appRoutes),
         FormsModule,
-        HttpModule
+        HttpModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule
     ],
     providers: [LugaresService],
     bootstrap: [AppComponent]
