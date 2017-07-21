@@ -1,12 +1,6 @@
 <label>Nombre</label>:
 <input [(ngModel)]="lugar.nombre" />
 <br />
-<label>Latitud</label>:
-<input  type="number" [(ngModel)]="lugar.lat" />
-<br />
-<label>Longitud</label>:
-<input  type="number" [(ngModel)]="lugar.lon" />
-<br />
 <label>Teléfono</label>:
 <input [(ngModel)]="lugar.telefono" />
 <br />
@@ -15,6 +9,21 @@
 <br />
 <label>Descripción</label>:
 <textarea [(ngModel)]="lugar.descripcion" ></textarea>
+<br />
+<label>Calle</label>:
+<input [(ngModel)]="lugar.calle" />
+<br />
+<label>Ciudad</label>:
+<input [(ngModel)]="lugar.ciudad" />
+<br />
+<label>Estado</label>:
+<input [(ngModel)]="lugar.estado" />
+<br />
+<label>País</label>:
+<input [(ngModel)]="lugar.pais" />
+<br />
+<label>Código Postal</label>:
+<input [(ngModel)]="lugar.codigo_postal" />
 <hr />
 <a (click)="onSave()">Guardar</a><br />
 <a routerLink="/home">Cancelar</a><br />
