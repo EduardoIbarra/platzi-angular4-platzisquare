@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {LugaresService} from "../services/lugares.service";
+import {LugaresFirebaseService} from "../services/lugares.firebase.service";
 
 @Component({
     selector: 'app-crear',
@@ -7,6 +8,7 @@ import {LugaresService} from "../services/lugares.service";
 })
 export class CrearComponent {
     lugar = {
+        id: null,
         nombre: null,
         descripcion: null,
         lat: null,
@@ -14,22 +16,20 @@ export class CrearComponent {
         telefono: null,
         website: null
     };
-    constructor(private lugaresService: LugaresService){
+    constructor(private lugaresFirebaseService: LugaresFirebaseService){
     }
     onSave(){
-        this.lugaresService.store(this.lugar)
-            .subscribe((result)=>{
-                alert('Lugar creado con éxito!');
-                console.log(result);
-                this.lugar = {
-                    nombre: null,
-                    descripcion: null,
-                    lat: null,
-                    lon: null,
-                    telefono: null,
-                    website: null
-                };
-            },
-            (error)=>console.log(error));
+        this.lugar.id = Date.now();
+        this.lugaresFirebaseService.store(this.lugar);
+        alert('Lugar creado con éxito!');
+        this.lugar = {
+            id: null,
+            nombre: null,
+            descripcion: null,
+            lat: null,
+            lon: null,
+            telefono: null,
+            website: null
+        };
     }
 }
