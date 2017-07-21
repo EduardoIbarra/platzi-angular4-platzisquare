@@ -8,9 +8,8 @@ import {LugaresFirebaseService} from "../services/lugares.firebase.service";
     templateUrl: './detalle.component.html'
 })
 export class DetalleComponent {
-    lat: number = 51.678418;
-    lng: number = 7.809007;
     lugar = null;
+    zoom = 15;
     id = null;
     constructor(private lugaresFirebaseService: LugaresFirebaseService, private route:ActivatedRoute){
         this.id = this.route.snapshot.params['id'];

@@ -2,4 +2,16 @@
 <ul>
     <li *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" resaltar="{{lugar.plan}}"><strong>{{lugar.nombre}}</strong> {{lugar.descripcion}}</li>
 </ul>
-<agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng"></agm-map>
+<agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker
+            *ngFor="let m of lugares; let i = index"
+            [latitude]="m.lat"
+            [longitude]="m.lon"
+            [label]="i">
+
+        <agm-info-window>
+            <strong>{{m.nombre}}</strong>
+        </agm-info-window>
+
+    </agm-marker>
+</agm-map>

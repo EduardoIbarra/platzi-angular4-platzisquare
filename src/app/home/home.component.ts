@@ -6,9 +6,10 @@ import {LugaresFirebaseService} from "../services/lugares.firebase.service";
     templateUrl: './home.component.html'
 })
 export class HomeComponent {
-    lat: number = 51.678418;
-    lng: number = 7.809007;
+    lat: number = 23.7409928;
+    lng: number = -99.1783574;
     lugares = [];
+    zoom = 13;
     constructor(private lugaresFirebaseService: LugaresFirebaseService){
         lugaresFirebaseService.getLugares()
             .subscribe( lugares => {
