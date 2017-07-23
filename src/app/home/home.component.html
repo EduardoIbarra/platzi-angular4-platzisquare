@@ -1,6 +1,6 @@
 <a routerLink="/crear">Crear Nuevo</a>
 <ul>
-    <li *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" resaltar="{{lugar.plan}}"><strong>{{lugar.nombre}}</strong> {{lugar.descripcion}}</li>
+    <li *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" resaltar="{{lugar.plan}}"><strong>{{lugar.nombre | uppercase}}</strong> {{lugar.descripcion}}</li>
 </ul>
 <agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <agm-marker
