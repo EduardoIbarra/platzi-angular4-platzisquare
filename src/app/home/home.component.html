@@ -1,8 +1,4 @@
-<a routerLink="/crear">Crear Nuevo</a>
-<ul>
-    <li *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" resaltar="{{lugar.plan}}"><strong>{{lugar.nombre | uppercase}}</strong> {{lugar.descripcion}}</li>
-</ul>
-<agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+<agm-map *ngIf="lat && lng" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [styles]="styles">
     <agm-marker
             *ngFor="let m of lugares; let i = index"
             [latitude]="m.lat"
@@ -15,3 +11,18 @@
 
     </agm-marker>
 </agm-map>
+<div class="container">
+    <hr />
+    <div class="row">
+        <div class="col-md-4 col-md-offset-8">
+            <a class="btn btn-primary btn-block" routerLink="/crear">Crear Nuevo</a>
+        </div>
+    </div>
+    <hr />
+    <div class="list-group">
+        <button type="button" *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" class="list-group-item">
+            <strong>{{lugar.nombre | uppercase}}</strong><br />
+            {{lugar.descripcion}}
+        </button>
+    </div>
+</div>

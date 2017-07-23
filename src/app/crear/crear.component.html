@@ -1,29 +1,44 @@
-<label>Nombre</label>:
-<input [(ngModel)]="lugar.nombre" />
-<br />
-<label>Teléfono</label>:
-<input [(ngModel)]="lugar.telefono" />
-<br />
-<label>Website</label>:
-<input [(ngModel)]="lugar.website" />
-<br />
-<label>Descripción</label>:
-<textarea [(ngModel)]="lugar.descripcion" ></textarea>
-<br />
-<label>Calle</label>:
-<input [(ngModel)]="lugar.calle" />
-<br />
-<label>Ciudad</label>:
-<input [(ngModel)]="lugar.ciudad" />
-<br />
-<label>Estado</label>:
-<input [(ngModel)]="lugar.estado" />
-<br />
-<label>País</label>:
-<input [(ngModel)]="lugar.pais" />
-<br />
-<label>Código Postal</label>:
-<input [(ngModel)]="lugar.codigo_postal" />
-<hr />
-<a (click)="onSave()">Guardar</a><br />
-<a routerLink="/home">Cancelar</a><br />
+<div class="well">
+    <div class="container">
+        <a routerLink="/home">Inicio</a> / Crear Lugar
+    </div>
+</div>
+<div class="container">
+    <h1>Crear nuevo lugar</h1>
+    <hr />
+    <label>Nombre</label>:
+    <input class="form-control" [(ngModel)]="lugar.nombre" />
+    <br />
+    <label>Teléfono</label>:
+    <input class="form-control" [(ngModel)]="lugar.telefono" />
+    <br />
+    <label>Website</label>:
+    <input class="form-control" [(ngModel)]="lugar.website" />
+    <br />
+    <label>Descripción</label>:
+    <textarea class="form-control" [(ngModel)]="lugar.descripcion" ></textarea>
+    <br />
+    <label>Calle</label>:
+    <input class="form-control" [(ngModel)]="lugar.calle" />
+    <br />
+    <label>Ciudad</label>:
+    <input class="form-control" [(ngModel)]="lugar.ciudad" />
+    <br />
+    <label>Estado</label>:
+    <input class="form-control" [(ngModel)]="lugar.estado" />
+    <br />
+    <label>País</label>:
+    <input class="form-control" [(ngModel)]="lugar.pais" />
+    <br />
+    <label>Código Postal</label>:
+    <input class="form-control" [(ngModel)]="lugar.codigo_postal" />
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-block" (click)="onSave()">Guardar</a><br />
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-default btn-block" routerLink="/home">Cancelar</a><br />
+        </div>
+    </div>
+</div>
