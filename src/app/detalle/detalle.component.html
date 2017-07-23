@@ -10,7 +10,7 @@
 </agm-map>
 <h1>{{lugar.nombre}}</h1>
 <hr />
-<p>{{lugar.descripcion}}</p>
+<p [innerHTML]="lugar.descripcion | linkify"></p>
 <p>{{lugar.telefono}}</p>
 <p><a href="{{lugar.website}}" target="_blank">{{lugar.website}}</a></p>
 <p>
