@@ -16,6 +16,14 @@ export class AutorizacionService {
             });
     };
     public login = (email, password) => {
-        console.log('Login!');
+        this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
+            .then((response) => {
+                alert('Loggeado Correctamente');
+                console.log(response);
+            })
+            .catch((error) => {
+                alert('Ocurrió un error');
+                console.log(error);
+            });
     };
 }
