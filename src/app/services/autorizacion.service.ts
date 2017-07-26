@@ -28,6 +28,9 @@ export class AutorizacionService {
                 console.log(error);
             });
     };
+    public logout(){
+        this.angularFireAuth.auth.signOut();
+    }
     public isLogged(){
          return this.angularFireAuth.authState
     }
