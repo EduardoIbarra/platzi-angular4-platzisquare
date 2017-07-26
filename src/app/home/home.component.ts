@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {LugaresFirebaseService} from "../services/lugares.firebase.service";
+import {AutorizacionService} from "../services/autorizacion.service";
 
 @Component({
     selector: 'app-home',
@@ -139,7 +140,18 @@ export class HomeComponent {
             ]
         }
     ];
-    constructor(private lugaresFirebaseService: LugaresFirebaseService){
+    loggedIn = false;
+    constructor(private lugaresFirebaseService: LugaresFirebaseService, public autorizacionService: AutorizacionService){
+        autorizacionService.isLogged()
+            .subscribe((result) => {
+                if(result && result.uid){
+                    this.loggedIn = true;
+                }else{
+                    this.loggedIn = false;
+                }
+            }, (error) => {
+                this.loggedIn =  false;
+            });
         lugaresFirebaseService.getLugares()
             .subscribe( lugares => {
                 this.lugares = lugares;

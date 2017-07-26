@@ -3,7 +3,9 @@ import {AngularFireAuth} from "angularfire2/auth/auth";
 
 @Injectable()
 export class AutorizacionService {
-    constructor(private angularFireAuth: AngularFireAuth){}
+    constructor(private angularFireAuth: AngularFireAuth){
+        this.isLogged();
+    }
     public registro = (email, password) => {
         this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
             .then((response) => {
@@ -26,4 +28,7 @@ export class AutorizacionService {
                 console.log(error);
             });
     };
+    public isLogged(){
+         return this.angularFireAuth.authState
+    }
 }
