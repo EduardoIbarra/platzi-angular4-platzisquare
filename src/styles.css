@@ -2,3 +2,8 @@
 agm-map {
     height: 300px;
 }
+div#contenedor-formulario {
+    border: 1px solid lightgray;
+    padding: 45px 30px;
+    border-radius: 5px;
+}

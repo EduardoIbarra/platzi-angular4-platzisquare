@@ -16,12 +16,16 @@ import {AngularFireDatabaseModule} from "angularfire2/database/database.module";
 import {AngularFireModule} from "angularfire2";
 import {LugaresFirebaseService} from "./services/lugares.firebase.service";
 import {LinkifyPipe} from "./pipes/linkify.pipe";
+import {RegistroComponent} from "./registro/registro.component";
+import {LoginComponent} from "./login/login.component";
 
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
     {path:'home', component: HomeComponent},
     {path:'detalle/:id', component: DetalleComponent},
-    {path:'crear', component: CrearComponent}
+    {path:'crear', component: CrearComponent},
+    {path:'registro', component: RegistroComponent},
+    {path:'login', component: LoginComponent}
 ];
 
 export const firebaseConfig = {
@@ -39,7 +43,9 @@ export const firebaseConfig = {
         HomeComponent,
         DetalleComponent,
         CrearComponent,
-        LinkifyPipe
+        LinkifyPipe,
+        RegistroComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
