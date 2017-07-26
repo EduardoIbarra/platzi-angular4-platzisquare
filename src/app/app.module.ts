@@ -18,6 +18,7 @@ import {LugaresFirebaseService} from "./services/lugares.firebase.service";
 import {LinkifyPipe} from "./pipes/linkify.pipe";
 import {RegistroComponent} from "./registro/registro.component";
 import {LoginComponent} from "./login/login.component";
+import {AutorizacionService} from "./services/autorizacion.service";
 
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
@@ -59,7 +60,7 @@ export const firebaseConfig = {
         AngularFireDatabaseModule,
         AngularFireAuthModule
     ],
-    providers: [LugaresService, LugaresFirebaseService],
+    providers: [LugaresService, LugaresFirebaseService, AutorizacionService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
