@@ -7,9 +7,9 @@
             <input class="form-control" [(ngModel)]="credenciales.email" />
             <br />
             <label>Password</label>:
-            <input class="form-control" [(ngModel)]="credenciales.password" />
+            <input type="password" class="form-control" [(ngModel)]="credenciales.password" />
             <br />
-            <a class="btn btn-primary btn-block">Registrarse</a>
+            <a class="btn btn-primary btn-block" (click)="registro()">Registrarse</a>
         </div>
     </div>
 </div>

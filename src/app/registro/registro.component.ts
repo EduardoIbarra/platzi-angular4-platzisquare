@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AutorizacionService} from "../services/autorizacion.service";
 
 @Component({
     selector: 'app-registro',
@@ -9,6 +10,9 @@ export class RegistroComponent {
         email: null,
         password: null
     };
-    constructor(){
+    constructor(private autorizacionService: AutorizacionService){
+    }
+    registro(){
+        this.autorizacionService.registro(this.credenciales.email, this.credenciales.password);
     }
 }

@@ -1,11 +1,19 @@
 import { Injectable } from "@angular/core";
-import {AngularFireDatabase} from "angularfire2/database/database";
+import {AngularFireAuth} from "angularfire2/auth/auth";
 
 @Injectable()
 export class AutorizacionService {
-    constructor(private afDB: AngularFireDatabase){}
+    constructor(private angularFireAuth: AngularFireAuth){}
     public registro = (email, password) => {
-        console.log('Registrar!');
+        this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
+            .then((response) => {
+                alert('Registrado Correctamente');
+                console.log(response);
+            })
+            .catch((error) => {
+                alert('Ocurrió un error');
+                console.log(error);
+            });
     };
     public login = (email, password) => {
         console.log('Login!');
