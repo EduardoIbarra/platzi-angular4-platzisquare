@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import {LugaresService} from "../services/lugares.service";
 import {LugaresFirebaseService} from "../services/lugares.firebase.service";
+import {FormControl} from "@angular/forms";
+import {Observable} from "rxjs";
+import 'rxjs/Rx';
+import {Http} from "@angular/http";
 
 @Component({
     selector: 'app-crear',
@@ -21,7 +25,15 @@ export class CrearComponent {
         pais: null,
         codigo_postal: null
     };
-    constructor(private lugaresFirebaseService: LugaresFirebaseService){
+    results$: Observable<any>;
+    private searchField: FormControl;
+    constructor(private lugaresFirebaseService: LugaresFirebaseService, private _http: Http){
+        const URL = 'http://maps.google.com/maps/api/geocode/json';
+        this.searchField = new FormControl();
+        this.results$ = this.searchField.valueChanges
+            .switchMap(query => this._http.get(`${URL}?address=${query}`))
+            .map(res => res.json())
+            .map(res => res.results);
     }
     onSave(){
         var direccion = this.lugar.calle+','+this.lugar.ciudad+','+this.lugar.estado+','+this.lugar.pais+','+this.lugar.codigo_postal;

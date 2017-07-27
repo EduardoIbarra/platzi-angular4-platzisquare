@@ -9,7 +9,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {LugaresService} from "./services/lugares.service";
 import {CrearComponent} from "./crear/crear.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {AngularFireAuthModule} from "angularfire2/auth/auth.module";
 import {AngularFireDatabaseModule} from "angularfire2/database/database.module";
@@ -59,7 +59,8 @@ export const firebaseConfig = {
         HttpModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        ReactiveFormsModule
     ],
     providers: [LugaresService, LugaresFirebaseService, AutorizacionService, MyGuard],
     bootstrap: [AppComponent]

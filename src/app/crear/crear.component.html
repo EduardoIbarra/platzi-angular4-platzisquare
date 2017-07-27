@@ -17,7 +17,17 @@
     <br />
     <label>Descripción</label>:
     <textarea class="form-control" [(ngModel)]="lugar.descripcion" ></textarea>
-    <br />
+    <hr />
+    <div>
+        <form #searchForm="ngForm">
+            <h3>Buscar Dirección en Google</h3>
+            <input [formControl]="searchField" id="search" class="form-control"/>
+        </form>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let result of results$ | async">{{result.formatted_address}}</li>
+        </ul>
+    </div>
+    <hr />
     <label>Calle</label>:
     <input class="form-control" [(ngModel)]="lugar.calle" />
     <br />
