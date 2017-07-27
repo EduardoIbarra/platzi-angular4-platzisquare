@@ -20,6 +20,7 @@ import {RegistroComponent} from "./registro/registro.component";
 import {LoginComponent} from "./login/login.component";
 import {AutorizacionService} from "./services/autorizacion.service";
 import {MyGuard} from "./services/my-guard.service";
+import {ContactoComponent} from "./contacto/contacto.component";
 
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     {path:'detalle/:id', component: DetalleComponent},
     {path:'crear', component: CrearComponent, canActivate: [MyGuard]},
     {path:'registro', component: RegistroComponent},
-    {path:'login', component: LoginComponent}
+    {path:'login', component: LoginComponent},
+    {path:'contacto', component: ContactoComponent}
 ];
 
 export const firebaseConfig = {
@@ -47,7 +49,8 @@ export const firebaseConfig = {
         CrearComponent,
         LinkifyPipe,
         RegistroComponent,
-        LoginComponent
+        LoginComponent,
+        ContactoComponent
     ],
     imports: [
         BrowserModule,

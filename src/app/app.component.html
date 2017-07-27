@@ -13,12 +13,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a routerLink="/">Inicio <span class="sr-only">(current)</span></a></li>
-                <li><a routerLink="/">Contacto</a></li>
+                <li routerLinkActive="active"><a routerLink="/home">Inicio <span class="sr-only">(current)</span></a></li>
+                <li routerLinkActive="active"><a routerLink="/contacto">Contacto</a></li>
             </ul>
             <ul *ngIf="!loggedIn" class="nav navbar-nav navbar-right">
-                <li><a routerLink="/login">Login</a></li>
-                <li><a routerLink="/registro">Registro</a></li>
+                <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+                <li routerLinkActive="active"><a routerLink="/registro">Registro</a></li>
             </ul>
             <ul *ngIf="loggedIn" class="nav navbar-nav navbar-right">
                 <li><a (click)="logout()">Salir</a></li>
