@@ -31,6 +31,7 @@ export class CrearComponent {
         const URL = 'http://maps.google.com/maps/api/geocode/json';
         this.searchField = new FormControl();
         this.results$ = this.searchField.valueChanges
+            .debounceTime(500)
             .switchMap(query => this._http.get(`${URL}?address=${query}`))
             .map(res => res.json())
             .map(res => res.results);
