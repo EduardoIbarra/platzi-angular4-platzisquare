@@ -19,12 +19,13 @@ import {LinkifyPipe} from "./pipes/linkify.pipe";
 import {RegistroComponent} from "./registro/registro.component";
 import {LoginComponent} from "./login/login.component";
 import {AutorizacionService} from "./services/autorizacion.service";
+import {MyGuard} from "./services/my-guard.service";
 
 const appRoutes: Routes = [
     {path:'', component: HomeComponent},
     {path:'home', component: HomeComponent},
     {path:'detalle/:id', component: DetalleComponent},
-    {path:'crear', component: CrearComponent},
+    {path:'crear', component: CrearComponent, canActivate: [MyGuard]},
     {path:'registro', component: RegistroComponent},
     {path:'login', component: LoginComponent}
 ];
@@ -60,7 +61,7 @@ export const firebaseConfig = {
         AngularFireDatabaseModule,
         AngularFireAuthModule
     ],
-    providers: [LugaresService, LugaresFirebaseService, AutorizacionService],
+    providers: [LugaresService, LugaresFirebaseService, AutorizacionService, MyGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
