@@ -6,7 +6,11 @@ export class LugaresService {
     API_ENDPOINT = 'https://platzi-square-pre.firebaseio.com';
     constructor (private http: Http ){}
     public get() {
-        return this.http.get(this.API_ENDPOINT+'/lugares.json');
+        return this.http.get(this.API_ENDPOINT+'/.json')
+            .map((response) => {
+                const data = response.json().lugares;
+                return data;
+            })
     };
     public store = (lugar) => {
         const headers = new Headers({"Content-Type":"application/json"});
