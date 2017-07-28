@@ -20,7 +20,7 @@
     </div>
     <hr />
     <div class="list-group">
-        <button type="button" *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" class="list-group-item">
+        <button type="button" *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" [queryParams]="{referer:'home'}" class="list-group-item">
             <strong>{{lugar.nombre | uppercase}}</strong><br />
             {{lugar.descripcion}}
         </button>

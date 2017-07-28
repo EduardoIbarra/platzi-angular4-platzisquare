@@ -141,6 +141,7 @@ export class DetalleComponent {
         }
     ];
     constructor(private lugaresFirebaseService: LugaresFirebaseService, private route:ActivatedRoute){
+        console.log(this.route.snapshot.queryParams);
         this.id = this.route.snapshot.params['id'];
         this.lugaresFirebaseService.getLugar(this.id)
             .subscribe(lugar => {
