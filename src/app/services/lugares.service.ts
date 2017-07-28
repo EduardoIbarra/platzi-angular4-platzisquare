@@ -3,7 +3,7 @@ import {Headers, Http} from "@angular/http";
 
 @Injectable()
 export class LugaresService {
-    API_ENDPOINT = 'https://platzi-square-pre.firebaseio.com';
+    API_ENDPOINT = 'https://platzi-square-pro.firebaseio.com';
     constructor (private http: Http ){}
     public get() {
         return this.http.get(this.API_ENDPOINT+'/.json')

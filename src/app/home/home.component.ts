@@ -17,6 +17,9 @@ export class HomeComponent {
                 var me = this;
                 me.lugares = Object.keys(this.lugares).map(function (key) { return me.lugares[key]; });
             },
-            (error) => console.log(error));
+            (error) => {
+                alert('Un error ha ocurrido: ' + error.json().error);
+                console.log(error);
+            });
     }
 }
